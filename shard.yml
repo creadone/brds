@@ -1,0 +1,13 @@
+name: BRDS
+version: 0.1.0
+
+authors:
+  - creadone <creadone@gmail.com>
+
+targets:
+  rhizome:
+    main: src/brds.cr
+
+crystal: 0.23.1
+
+license: MIT
