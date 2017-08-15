@@ -16,7 +16,7 @@ class Directory
     if File.exists?(@path)
       stat = File.stat(@path)
       {
-        "mode" => sprintf("%o", stat.mode),
+        "mode" => stat.mode,
         "uid" => stat.uid,
         "perm" => stat.perm,
         "atime" => stat.atime,

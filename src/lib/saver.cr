@@ -6,7 +6,7 @@ class Saver
   end
 
   def save
-    f = File.open(@file, "a")
+    f = File.open(@file, "w")
     @dirs.each do |dir|
       f.puts dir.to_h.to_yaml
     end

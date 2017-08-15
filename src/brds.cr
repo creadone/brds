@@ -1,10 +1,9 @@
 require "yaml"
 require "./lib/*"
+require "file_utils"
 
-dirs = Crawler.new("./").crawl
-saver = Saver.new(dirs, "./backup.yaml").save
+#dirs = Crawler.new("./").crawl
+#saver = Saver.new(dirs, "./backup.yaml").save
 loaded_dirs = Loader.new("./backup.yaml").load
 
-loaded_dirs.each do |d|
-  puts sprintf("%o", 493)
-end
+deployer = Deployer.new(loaded_dirs, "./backup.yaml", "./").deploy
