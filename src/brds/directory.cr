@@ -18,7 +18,6 @@ class Directory
       {
         "mode" => stat.mode,
         "uid" => stat.uid,
-        "perm" => stat.perm,
         "atime" => stat.atime,
         "mtime" => stat.mtime,
         "ctime" => stat.ctime

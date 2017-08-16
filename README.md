@@ -1,22 +1,37 @@
-# brds
+# BRDS
 
-TODO: Write a description here
+Utility makes directories structure backup or recovery.
+The main feature is to save structure to YAML file as list of directories and metadata.
 
 ## Installation
 
-TODO: Write installation instructions here
+1. Clone repo `git clone https://github.com/creadone/brds.git`
+2. Install dependencies `cd brds && shards`
+3. Build release `crystal build --release ./src/brds.cr -o ./dist/brds`
 
 ## Usage
 
-TODO: Write usage instructions here
+See `./brds --help` for manual page.
 
-## Development
+How to:
+```
+  ./brds [flags...] [arg...]
 
-TODO: Write development instructions here
+Backup and recovery directories structure
+
+Flags:
+  --file, -f (default: backup.yaml)  # Backup or recovery source file
+  --help (default: false)            # Display help for the current command
+  --list, -m (required)              # Work mode (backup | recovery)
+  --target, -t (default: ./)         # Path to directory where backup or recovery process will start
+```
+
+* To make backup: `./brds -m backup -f /path/to/backup.yaml -t /dirs/to/backup`
+* To recover from backup: `./brds -m recover -f /path/to/backup.yaml -t /path/to/recovery/dirs`
 
 ## Contributing
 
-1. Fork it ( https://github.com/[your-github-name]/brds/fork )
+1. Fork it ( https://github.com/creadone/brds/fork )
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
@@ -24,4 +39,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [[your-github-name]](https://github.com/[your-github-name]) Sergey - creator, maintainer
+- [creadone](https://github.com/creadone) - owner, maintainer
