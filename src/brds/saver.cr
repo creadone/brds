@@ -1,10 +1,8 @@
 class Saver
-
   def initialize(dirs : Array(Directory), file : String)
     @dirs = dirs
     @file = file
   end
-
   def save
     f = File.open(@file, "w")
     @dirs.each do |dir|
@@ -12,5 +10,4 @@ class Saver
     end
     f.close
   end
-
 end

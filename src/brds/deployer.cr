@@ -1,8 +1,7 @@
 class Deployer
 
-  def initialize(dirs : Array(YAML::Any), backup_file : String, path_from : String)
+  def initialize(dirs : Array(YAML::Any), path_from : String)
     @dirs = dirs
-    @backup_file = backup_file
     @path_from = path_from
   end
 
@@ -16,5 +15,5 @@ class Deployer
       File.utime(atime, mtime, path)
     end
   end
-
+  
 end

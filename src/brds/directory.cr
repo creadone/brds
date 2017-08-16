@@ -1,5 +1,4 @@
 class Directory
-
   def initialize(path : String)
     @path = path
   end
@@ -35,5 +34,4 @@ class Directory
   def to_h
     stat.merge({ "path" => @path, "level" => level })
   end
-
 end
