@@ -1,6 +1,7 @@
 class Directory
-  def initialize(path : String)
+  def initialize(path : String, start_dir : String)
     @path = path
+    @start_dir = start_dir
   end
 
   def level
@@ -12,8 +13,8 @@ class Directory
   end
 
   def stat
-    if File.exists?(@path)
-      stat = File.stat(@path)
+    if File.exists?(File.join(@start_dir, @path))
+      stat = File.stat(File.join(@start_dir, @path))
       {
         "mode" => stat.mode,
         "uid" => stat.uid,
@@ -23,7 +24,7 @@ class Directory
         "ctime" => stat.ctime
       }
     else
-      raise "Directory not found: #{@path}"
+      puts "Directory not found: #{File.join(@start_dir, @path)}"; exit
     end
   end
 

@@ -2,6 +2,6 @@
 *.DS_Store
 .DS_Store
 
-lib/
+lib/*
 dist/*
 .shards/*

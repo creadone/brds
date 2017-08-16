@@ -5,7 +5,10 @@ class Crawler
   def crawl
     list = Array(Directory).new
     Dir.[File.join(@start_dir, "**/*")].each do |path|
-      list << Directory.new(path) if File.directory?(path)
+      if File.directory?(path)
+        relative_path = path.sub(@start_dir, "")
+        list << Directory.new(relative_path, @start_dir)
+      end
     end
     list.sort_by!{ |dir| dir.level }
   end

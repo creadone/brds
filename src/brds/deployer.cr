@@ -11,9 +11,13 @@ class Deployer
       mode = dir["mode"].to_s.to_i
       atime = Time.parse(dir["atime"].to_s, "%FT%X%z")
       mtime = Time.parse(dir["mtime"].to_s, "%FT%X%z")
-      Dir.mkdir(path, mode)
-      File.utime(atime, mtime, path)
+      begin
+        Dir.mkdir_p(path, mode)
+        File.utime(atime, mtime, path)
+      rescue e
+        puts e.message
+      end
     end
   end
-  
+
 end
