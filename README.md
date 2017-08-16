@@ -27,7 +27,7 @@ Flags:
 ```
 
 * To make backup: `./brds -m backup -f /path/to/backup.yaml -t /dirs/to/backup`
-* To recover from backup: `./brds -m recover -f /path/to/backup.yaml -t /path/to/recovery/dirs`
+* To recover from backup: `./brds -m recovery -f /path/to/backup.yaml -t /path/to/recovery/dirs`
 
 ## Contributing
 
