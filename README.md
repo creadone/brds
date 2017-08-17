@@ -22,7 +22,7 @@ Backup and recovery directories structure
 Flags:
   --file, -f (default: backup.yaml)  # Backup or recovery source file
   --help (default: false)            # Display help for the current command
-  --list, -m (required)              # Work mode (backup | recovery)
+  --mode, -m (required)              # Work mode (backup | recovery)
   --target, -t (default: ./)         # Path to directory where backup or recovery process will start
 ```
 
